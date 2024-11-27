@@ -1,6 +1,6 @@
 import Button from "@mui/material/Button";
 // eslint-disable-next-line react/prop-types
-export default function SearchButton({ searchTerm }) {
+export default function SearchButton({ onSearch }) {
   return (
     <Button
       style={{
@@ -8,15 +8,12 @@ export default function SearchButton({ searchTerm }) {
         borderRadius: "0px 10px 10px 0px",
         backgroundColor: "#1976d2",
         color: "white",
-        fontFamily: "inter",
+        fontFamily: "Inter",
         fontSize: "1rem",
         fontWeight: "bold",
       }}
       variant="contained"
-      color="primary"
-      onClick={() => {
-        console.log(searchTerm);
-      }}
+      onClick={onSearch}
     >
       Search
     </Button>
