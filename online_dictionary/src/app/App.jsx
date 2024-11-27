@@ -15,7 +15,19 @@ export default function App() {
   return (
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
+
       <main className="main">
+        <h1
+          style={{
+            color: "white",
+            fontFamily: "inter",
+            fontWeight: "bold",
+            fontSize: "3rem",
+            textAlign: "center",
+          }}
+        >
+          Online Dictionary
+        </h1>
         <Form />
       </main>
     </ThemeProvider>
