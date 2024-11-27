@@ -2,39 +2,50 @@ import SearchIcon from "@mui/icons-material/Search";
 import FormControl from "@mui/material/FormControl";
 import InputAdornment from "@mui/material/InputAdornment";
 import TextField from "@mui/material/TextField";
-import SearchButton from "../componets/Button/SearchButton";
-export default function Form() {
-  // eslint-disable-next-line no-undef
-  const [searchTerm, setSearchTerm] = useState("");
-  return (
-    <FormControl
-      variant="outlined"
-      style={{
-        display: "flex",
-        flexDirection: "row",
+import { useState } from "react";
+import SearchButton from "../Button/SearchButton";
+import Description from "../Description/Description";
 
-        alignItems: "center",
-      }}
-    >
-      <TextField
-        onChange={(e) => {
-          setSearchTerm(e.target.value);
-        }}
-        style={{
-          width: "50ch",
-        }}
-        id="outlined-basic"
-        label="Search Word"
+export default function Form() {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [query, setQuery] = useState("");
+
+  const handleSearch = () => {
+    setQuery(searchTerm);
+  };
+
+  return (
+    <div>
+      <FormControl
         variant="outlined"
-        InputProps={{
-          startAdornment: (
-            <InputAdornment position="start">
-              <SearchIcon />
-            </InputAdornment>
-          ),
+        style={{
+          flexDirection: "row",
+          alignItems: "center",
+          marginBottom: "1rem",
         }}
-      />
-      <SearchButton searchTerm={searchTerm} />
-    </FormControl>
+      >
+        <TextField
+          onChange={(e) => setSearchTerm(e.target.value)}
+          style={{
+            marginLeft: "1rem",
+            width: "40ch",
+          }}
+          id="outlined-basic"
+          label="Search Word"
+          variant="outlined"
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <SearchIcon />
+              </InputAdornment>
+            ),
+          }}
+        />
+        <SearchButton searchTerm={searchTerm} onSearch={handleSearch} />
+      </FormControl>
+      <div>
+        <Description word={query} />
+      </div>
+    </div>
   );
 }
