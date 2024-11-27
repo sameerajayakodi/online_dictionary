@@ -1,6 +1,7 @@
-.formControl {
-  display: "flex";
-  flex-direction: "row";
-  gap: "10px";
-  width: "100%";
+.main {
+  text-align: left;
+  width: 600px;
+
+  height: auto;
+  border-radius: 1rem;
 }
