@@ -21,13 +21,14 @@ export default function Form() {
         style={{
           flexDirection: "row",
           alignItems: "center",
-          marginBottom: "1rem",
+          marginBottom: "2rem",
         }}
       >
         <TextField
           onChange={(e) => setSearchTerm(e.target.value)}
           style={{
             marginLeft: "1rem",
+
             width: "40ch",
           }}
           id="outlined-basic"
