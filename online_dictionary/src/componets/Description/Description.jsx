@@ -46,8 +46,9 @@ export default function Description({ word }) {
   return (
     <Box
       sx={{
+        textAlign: "left",
         color: "white",
-        padding: "20px",
+        padding: "30px",
         borderRadius: "10px",
         marginTop: "20px",
       }}
@@ -75,7 +76,11 @@ export default function Description({ word }) {
             marginBottom: "10px",
           }}
         >
-          <CardContent>
+          <CardContent
+            style={{
+              display: "flex",
+            }}
+          >
             {phonetic.text && (
               <Typography variant="body1">Phonetic: {phonetic.text}</Typography>
             )}
